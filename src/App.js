@@ -1,9 +1,9 @@
-import './App.css';
+import Album from './Components/Album'
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello Man</h1>
+      <Album></Album>
     </div>
   );
 }
