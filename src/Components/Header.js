@@ -5,7 +5,7 @@ import { AppBar, Typography, Toolbar } from '@material-ui/core'
 
 export default function Header() {
     return (
-        <AppBar>
+        <AppBar position='static'>
             <Toolbar>
                 <Typography> This is header</Typography>
             </Toolbar>
