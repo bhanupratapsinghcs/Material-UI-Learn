@@ -1,14 +1,13 @@
 import Album from './Components/Album'
 import Header from './Components/Header'
 import Grids from "./Components/Grids"
-import Paper from '@material-ui/core/Paper'
+import Boxes from './Components/Boxes'
+import React from 'react'
+// import Paper from '@material-ui/core/Paper'
 import { makeStyles, Typography } from '@material-ui/core';
 import Container from '@material-ui/core/Container'
 
 const useStyle = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1
-  },
   container: {
     // background: "red",
     marginTop: 10
@@ -18,13 +17,13 @@ const useStyle = makeStyles((theme) => ({
 function App() {
   const classes = useStyle();
   return (
-    <div className="App" className={classes.root} >
-      <Header></Header>
+    <React.Fragment>
+      <Header />
       <Container maxWidth="md" className={classes.container}>
         <Grids></Grids>
+        <Boxes></Boxes>
       </Container>
-
-    </div>
+    </React.Fragment>
   );
 }
 
