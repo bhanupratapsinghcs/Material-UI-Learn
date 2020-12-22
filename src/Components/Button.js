@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 export default function Button() {
     const [imageData, setImageData] = useState({})
     const fetchImages = () => {
-        fetch("https://api.unsplash.com/photos/?client_id=VD1a8dkVIqVn8yeEkpoZGeFe1Tp5Aq5F2FNbJcYyT1I")
+        console.log("https://api.unsplash.com/photos/?client_id=" + process.env.REACT_APP_API_KEY);
+        fetch("https://api.unsplash.com/photos/?client_id=" + process.env.REACT_APP_API_KEY)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -18,7 +19,7 @@ export default function Button() {
         <>
             <button onClick={() => fetchImages()}> Button</button>
             <button onClick={() => clickHandle()}> Butto2</button>
-            {/* <img src={imageData[3].urls.regular} /> */}
+            <img src={imageData[3].urls.regular} />
         </>
     )
 }

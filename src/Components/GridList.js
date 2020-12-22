@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
@@ -17,29 +17,29 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+// const fetchImages = () => {
+//     const [imageData, setImageData] = useState({})
+//     useEffect(async () => {
+//         const response = await fetch("https://api.unsplash.com/photos/?client_id=" + process.env.API_KEY)
+//         setImageData(response.json())
+//     }, [])
+//     return imageData;
+// };
+
 
 export default function ImageGridList() {
     const classes = useStyles();
-    const [imageData, setImageData] = useState({})
-    const fetchImages = () => {
-        fetch("https://api.unsplash.com/photos/?client_id=VD1a8dkVIqVn8yeEkpoZGeFe1Tp5Aq5F2FNbJcYyT1I")
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                setImageData(data)
-            })
-    }
-
+    // const imageData = fetchImages();
     return (
         <div className={classes.root}>
-            <button onClick={() => fetchImages()}> Button</button>
-            <GridList cellHeight={160} className={classes.gridList} cols={3}>
+            {/* <button onClick={() => fetchImages()}> Button</button> */}
+            {/* <GridList cellHeight={160} className={classes.gridList} cols={3}>
                 {imageData.map((tile) => (
                     <GridListTile key={tile} cols={tile.cols || 1}>
                         <img src={tile.urls.regular} alt={tile.title} />
                     </GridListTile>
                 ))}
-            </GridList>
+            </GridList> */}
         </div>
     );
 }

@@ -25,7 +25,7 @@ function App() {
         <Grids></Grids>
         <Boxes></Boxes>
         <Button />
-        <GridList />
+        {/* <GridList /> */}
       </Container>
     </React.Fragment>
   );
