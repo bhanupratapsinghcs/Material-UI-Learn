@@ -21,11 +21,12 @@ function App() {
   return (
     <React.Fragment>
       <Header />
-      <Container maxWidth="md" className={classes.container}>
-        {/* <Grids></Grids> */}
+      <Container maxWidth="lg" className={classes.container}>
+        <GridList />
+        <br />
+        <Grids></Grids>
         {/* <Boxes></Boxes> */}
         {/* <Button /> */}
-        <GridList />
       </Container>
     </React.Fragment>
   );
