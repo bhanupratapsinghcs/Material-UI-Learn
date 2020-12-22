@@ -5,7 +5,6 @@ import { Grid, makeStyles } from '@material-ui/core';
 const useStyle = makeStyles((theme) => ({
     paper: {
         background: "grey",
-        elevation: 3,
         padding: theme.spacing(2),
         textAlign: 'center',
         color: theme.palette.text.secondary
@@ -17,7 +16,7 @@ export default function Grids() {
     return (
         <Grid container spacing={3}>
             <Grid item xs={12}>
-                <Paper elevation={3} className={classes.paper}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore in recusandae obcaecati voluptate mollitia laboriosam, reiciendis dolor at quisquam, quod molestias qui tempora nobis maxime aliquam, itaque cum totam voluptates. Fuga maiores provident delectus, ducimus, unde vitae minima ut libero tempore impedit numquam odit eos excepturi cupiditate quaerat. Qui deserunt vel hic harum error alias modi, velit expedita distinctio ut debitis molestiae illum nihil cupiditate adipisci ducimus tempore culpa deleniti, omnis optio. Ipsam cum rerum, possimus eius sed iure quisquam, fugiat, rem recusandae architecto excepturi animi ullam ab. Iste, accusamus? Aliquam voluptate inventore, reiciendis quos et aspernatur eius quae eum.</Paper>
+                <Paper elevation={5} className={classes.paper}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore in recusandae obcaecati voluptate mollitia laboriosam, reiciendis dolor at quisquam, quod molestias qui tempora nobis maxime aliquam, itaque cum totam voluptates. Fuga maiores provident delectus, ducimus, unde vitae minima ut libero tempore impedit numquam odit eos excepturi cupiditate quaerat. Qui deserunt vel hic harum error alias modi, velit expedita distinctio ut debitis molestiae illum nihil cupiditate adipisci ducimus tempore culpa deleniti, omnis optio. Ipsam cum rerum, possimus eius sed iure quisquam, fugiat, rem recusandae architecto excepturi animi ullam ab. Iste, accusamus? Aliquam voluptate inventore, reiciendis quos et aspernatur eius quae eum.</Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
                 <Paper className={classes.paper}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum accusantium ea asperiores quam sit. Numquam, dolorum necessitatibus? Velit, eum rerum, voluptatibus ea alias a iusto quod obcaecati impedit repellat sint accusamus assumenda facere nisi tempora officia repudiandae animi? Esse consequatur a molestiae, nam fugit ipsa deleniti amet quaerat eum aspernatur!</Paper>
