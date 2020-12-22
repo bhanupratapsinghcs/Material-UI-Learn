@@ -22,10 +22,10 @@ function App() {
     <React.Fragment>
       <Header />
       <Container maxWidth="md" className={classes.container}>
-        <Grids></Grids>
-        <Boxes></Boxes>
-        <Button />
-        {/* <GridList /> */}
+        {/* <Grids></Grids> */}
+        {/* <Boxes></Boxes> */}
+        {/* <Button /> */}
+        <GridList />
       </Container>
     </React.Fragment>
   );

@@ -19,7 +19,7 @@ export default function Button() {
         <>
             <button onClick={() => fetchImages()}> Button</button>
             <button onClick={() => clickHandle()}> Butto2</button>
-            <img src={imageData[3].urls.regular} />
+            {/* <img src={imageData[3].urls.regular} /> */}
         </>
     )
 }

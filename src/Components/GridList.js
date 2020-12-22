@@ -12,34 +12,39 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
     },
     gridList: {
-        width: 500,
-        height: 450,
+        width: 1000,
+        // height: 1000,
     },
 }));
 
-// const fetchImages = () => {
-//     const [imageData, setImageData] = useState({})
-//     useEffect(async () => {
-//         const response = await fetch("https://api.unsplash.com/photos/?client_id=" + process.env.API_KEY)
-//         setImageData(response.json())
-//     }, [])
-//     return imageData;
-// };
+
 
 
 export default function ImageGridList() {
     const classes = useStyles();
-    // const imageData = fetchImages();
+    const [imageData, setImageData] = useState([])
+    useEffect(() => {
+        fetch("https://api.unsplash.com/photos/?per_page=50&client_id=" + process.env.REACT_APP_API_KEY)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setImageData(data)
+            })
+
+    }, [])
+    // const fetchImages = () => {
+    //     console.log(imageData);
+    // }
     return (
         <div className={classes.root}>
             {/* <button onClick={() => fetchImages()}> Button</button> */}
-            {/* <GridList cellHeight={160} className={classes.gridList} cols={3}>
+            {imageData && <GridList cellHeight={360} className={classes.gridList} cols={3}>
                 {imageData.map((tile) => (
-                    <GridListTile key={tile} cols={tile.cols || 1}>
+                    <GridListTile key={tile.id} cols={tile.cols || 1}>
                         <img src={tile.urls.regular} alt={tile.title} />
                     </GridListTile>
                 ))}
-            </GridList> */}
+            </GridList>}
         </div>
     );
 }
