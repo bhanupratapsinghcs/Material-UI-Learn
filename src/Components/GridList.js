@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
+import { fetchImages } from '../Action/Api'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -18,9 +19,6 @@ const useStyles = makeStyles((theme) => ({
         // height: 1000,
     },
 }));
-
-
-
 
 function ImageGridList(props) {
     const classes = useStyles();
@@ -40,22 +38,26 @@ function ImageGridList(props) {
 
         return 1;
     }
-
+    const imagesApiFetch = async (url) => {
+        let data = await fetchImages(url)
+        setImageData(data)
+    }
     useEffect(() => {
-        fetch("https://api.unsplash.com/photos/?per_page=50&client_id=" + process.env.REACT_APP_API_KEY)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                setImageData(data)
-            })
+        // fetch("https://api.unsplash.com/photos/?page=2&per_page=50&client_id=" + process.env.REACT_APP_API_KEY)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data)
+        //         setImageData(data)
+        //     })
+        imagesApiFetch("https://api.unsplash.com/photos/?page=2&per_page=50&client_id=" + process.env.REACT_APP_API_KEY);
 
-    }, [])
-    // const fetchImages = () => {
-    //     console.log(imageData);
-    // }
+    }, []);
+    const handleButton = () => {
+        console.log(imageData);
+    }
     return (
         <div className={classes.root}>
-            {/* <button onClick={() => fetchImages()}> Button</button> */}
+            <button onClick={() => handleButton()}> Button</button>
             {imageData && <GridList spacing={18} cellHeight={350} className={classes.gridList} cols={getGridListCols()}>
                 {imageData.map((tile) => (
                     <GridListTile key={tile.id} cols={tile.cols || 1}>
