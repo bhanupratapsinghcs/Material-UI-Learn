@@ -4,10 +4,10 @@ import { AppBar, Typography, Toolbar, makeStyles, IconButton, fade, InputBase } 
 import CameraOutlined from '@material-ui/icons/CameraOutlined'
 import SearchIcon from '@material-ui/icons/Search'
 
-
 const useStyle = makeStyles((theme) => ({
     menuButton: {
         marginRight: theme.spacing(1),
+        marginBottom: 1
     },
     title: {
         flexGrow: 1,
@@ -58,8 +58,12 @@ const useStyle = makeStyles((theme) => ({
     },
 }));
 
-export default function Header() {
+export default function Header(props) {
     const classes = useStyle();
+    const handleChange = (e) => {
+        props.onChange(e.target.value);
+    }
+    // console.log(value);
     return (
         <AppBar position='static'>
             <Toolbar>
@@ -83,6 +87,7 @@ export default function Header() {
                             input: classes.inputInput,
                         }}
                         inputProps={{ 'aria-label': 'search' }}
+                        onChange={(e) => handleChange(e)}
                     />
                 </div>
             </Toolbar>
