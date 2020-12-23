@@ -1,6 +1,6 @@
-// import Album from './Components/Album'
+import SearchResult from './Components/SearchResult'
 import Header from './Components/Header'
-import Grids from "./Components/Grids"
+// import Grids from "./Components/Grids"
 // import Boxes from './Components/Boxes'
 // import Button from './Components/Button'
 import GridList from './Components/GridList'
@@ -18,18 +18,20 @@ const useStyle = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyle();
-  const [value, setValue] = useState(null);
+  const [value, setValue] = useState('');
   const handleChange = (e) => {
-    setValue("bhban");
-    console.log(e);
+    setValue(e);
   }
+  console.log(value);
   return (
     <React.Fragment>
       <Header onChange={(v) => handleChange(v)} />
       <Container maxWidth="lg" className={classes.container}>
-        <GridList />
+        {value ? <SearchResult value={value} /> : <GridList />}
+
+
         <br />
-        <Grids></Grids>
+        {/* <Grids></Grids> */}
         {/* <Boxes></Boxes> */}
         {/* <Button /> */}
       </Container>

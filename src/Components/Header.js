@@ -63,7 +63,6 @@ export default function Header(props) {
     const handleChange = (e) => {
         props.onChange(e.target.value);
     }
-    // console.log(value);
     return (
         <AppBar position='static'>
             <Toolbar>

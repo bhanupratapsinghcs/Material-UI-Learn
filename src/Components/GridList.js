@@ -52,12 +52,12 @@ function ImageGridList(props) {
         imagesApiFetch("https://api.unsplash.com/photos/?page=2&per_page=50&client_id=" + process.env.REACT_APP_API_KEY);
 
     }, []);
-    const handleButton = () => {
-        console.log(imageData);
-    }
+    // const handleButton = () => {
+    //     console.log(imageData);
+    // }
     return (
         <div className={classes.root}>
-            <button onClick={() => handleButton()}> Button</button>
+            {/* <button onClick={() => handleButton()}> Button</button> */}
             {imageData && <GridList spacing={18} cellHeight={350} className={classes.gridList} cols={getGridListCols()}>
                 {imageData.map((tile) => (
                     <GridListTile key={tile.id} cols={tile.cols || 1}>
